@@ -1,0 +1,25 @@
+.fullwindow{
+  height: 100vh;
+  width: 100vw;
+}
+.fi-center{
+  position: fixed;
+  top:40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}.re-center{
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.card-mask{
+ 
+  height: 100%;
+  width: 100%;
+ 
+  background-color: rgba(0, 0, 0, 0.349);
+  transition: all .2s;
+}.card-mask:hover{
+  background-color:  rgba(8, 8, 8, 0.007);
+}
