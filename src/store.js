@@ -1,65 +1,67 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import { cardSet } from "./card";
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+          socket:{},
+    //游戏信息
+          clock:10,
+          gameInfo :{
+            id:null,
+            enemyId:null,
+            turn:null,
+            winner:null,
+            enemyhealth:30,
+            minehealth:30,
+            enemytablecards:[
+          ],
+          enemyhandcards:6,
+          tablecards:[
+          ],
+          handcards:[
+          ]
+        },
+        //客户端独有信息
         listen: (event)=>{
           document.getElementById('chooseCard').style.top= event.pageY +'px';
           document.getElementById('chooseCard').style.left= event.pageX +'px';      
-  },
+      },
         chooseId:null,
         choosedCard: {
           id:1,
           name:'warrir'
         },
-        tablecards:[
-          {
-            id:7,
-            name:'warrir'
-          },
-          {
-            id:8,
-            name:'mana'
-          },
-        ],
-        handcards:[
-          {
-            id:1,
-            name:'warrir'
-          },
-          {
-            id:2,
-            name:'mana'
-          },
-          {
-            id:3,
-            name:'thief'
-          },
-          {
-            id:4,
-            name:'thief'
-          }
-        ]
+        chooseTableCard:{
+
+        },
+        attackMode:false,
+        attackedCard:null    
   },
   mutations: {
-    carddown (state,id) {
-         var thecard =  state.handcards.find(ele=>{return ele.id == id})
-         state.tablecards.push(thecard)
-         state.handcards =  state.handcards.filter(ele=>{ return ele.id != id })
-         state.chooseId = null
-    },
-    cardchoose(state,card){
-        state.choosedCard =card;
-        state.chooseId=card.id
-    },
-    cardcancel(state){
-      document.getElementById('card'+state.chooseId).style.opacity = 1;
-      state.chooseId = null
-    }
+    ...{
+      gameinit(state,gameInfo){     
+        if(!gameInfo.handcards){
+            gameInfo.handcards = state.gameInfo.handcards
+            
+            state.gameInfo = gameInfo
+        }else{
+          state.gameInfo = gameInfo
+         
+        }
+      },
+      clockUpdate(state,info){
+        state.clock = info.clock
+        state.gameInfo.turn = info.id
+      },
+      setAttackMode(state,info){
+        state.attackMode=info
+      },
+     socketInit(state,socket){
+        state.socket = socket
+     },
+     },
+    ...cardSet
   },
-  actions: {
-
-  }
 })

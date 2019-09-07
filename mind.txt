@@ -1,0 +1,27 @@
+//匹配
+//准备2个人的数据
+promis getData(初始卡牌，先手))  =>
+then
+vuex.push(初始卡牌)
+
+vuex.turn  = !vuex.turn;
+
+
+vuex.gameinfo = {
+    enemy:{
+        health
+    },
+    mine:{
+        health
+    }
+}
+ 
+
+ //事件流
+ 1.攻击事件
+ 客户端.onAttack() to server with data(桌面信息)
+ 服务器.onAttack() to allplayer with data(桌面信息)
+ 
+1.结束事件
+客户端 .ongameOver()  页面转化
+服务器 

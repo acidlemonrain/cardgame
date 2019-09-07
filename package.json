@@ -9,7 +9,10 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "core-js": "^2.6.5",
+    "epic-spinners": "^1.1.0",
+    "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
+    "socket.io-client": "^2.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
@@ -18,8 +21,10 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "axios": "^0.18.0",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-axios": "^0.0.4",
     "vue-cli-plugin-vuetify": "^0.6.3",
     "vue-template-compiler": "^2.6.10",
     "vuetify-loader": "^1.2.2"

@@ -16,7 +16,7 @@ export default {
     computed: {
         //手牌
         cards() {
-            return this.$store.state.handcards 
+            return this.$store.state.gameInfo.handcards 
         }
     },
 }

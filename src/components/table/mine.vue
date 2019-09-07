@@ -1,8 +1,8 @@
 <template>
-  <div class="mine"  >
+  <div class="mine" id="mine" >
       
        <hand-card class="mine-hand-card"></hand-card>
-        
+       
   </div>
 </template>
 
@@ -33,7 +33,7 @@ methods: {
     width: 100vw;
     background-color: lightskyblue;
     z-index: 12;
-   
+   transition: all .2s
 }
 .mine-hand-card{
     display: inline-block;
